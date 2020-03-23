@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Exercices - Seance 1 -JQuery</title>
+
+</head>
+<body>
+    <section>
+        <h1>Exercise 1: click(), css(), add()</h1>
+        <form>
+            <textarea id="monTexte1" rows="4" cols="50"></textarea></br>
+            <textarea id="monTexte2" rows="4" cols="50"></textarea>
+        </form>
+        <p class="mesParagraphes">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae rerum consequatur praesentium voluptas aspernatur assumenda itaque sapiente quia eaque, quasi dolore officiis deserunt maiores est sint autem sit, repellat doloribus.</p>
+        <p class="mesParagraphes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem animi iure maxime, vitae atque et dolorum. Delectus harum impedit esse. Praesentium, et quisquam nihil alias tempora minima assumenda pariatur consectetur?</p>
+        <button id="exercice1">Cliquez ici</button>
+    </section>
+
+    <section>
+        <h1>Exercice 2: add() et appendTo()</h1>
+        <p id="paragraphe">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat voluptates tempore fugit quod quas earum, labore, officia repellendus inventore fuga laboriosam cum assumenda quam incidunt sunt recusandae iusto odit nisi.</p>
+        <button id="exercice2">Ajouter du texte</button>
+    </section>
+
+    <section>
+        <h1>Exercice 3: click(),css() et html()</h1>
+        <div id="couleur1" style="background-color:red;"></div>
+        <div id="couleur2" style="background-color:rgb(16,99,30);"></div>
+        <div id="couleur3" style="background-color: #523456"></div>
+        <div id="couleur4" style="background-color: #a11;"></div>
+    </section>
+
+    <section>
+        <h1>Exercice 4: last(),css() et addClass()</h1>
+        <p class="pGroupe">HTML</p>
+        <p class="pGroupe">JavaScript</p>
+        <p class="pGroupe">CSS</p>
+    </section>
+
+    <section>
+        <h1>Exercice 5: click() et addClass()</h1>
+        <div id="monDiv">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste incidunt exercitationem quia odit, consequatur ea, cumque iure ullam aut illo doloribus reiciendis! Vel, commodi hic aliquam veniam eveniet voluptas ipsum.</p>
+        </div>
+        <button id="exercice5">Changer les couleurs</button> 
+    </section>
+
+    <section>
+        <h1>Exercice 6: click() et after()</h1>
+        <p id="paragraphe2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat voluptates tempore fugit quod quas earum, labore, officia repellendus inventore fuga laboriosam cum assumenda quam incidunt sunt recusandae iusto odit nisi.</p>
+        <button id="exercice6">Ajouter du texte</button>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <script>
+        $(function(){
+            $("#exercice1").click(function(){
+                $("form").add(".mesParagraphes").css({border: "2px solid red"}); 
+            });
+            $("#exercice2").click(function(){
+                $("<span> Voici le texte ajouté au paragraphe en utilisant le method appendTo</span>").appendTo("#paragraphe");
+            });
+            $("#couleur1").click(function(){
+               $("#couleur1").html($("#couleur1").css('background-color'));
+            });
+            $("#couleur2").click(function(){
+               $("#couleur2").html($("#couleur2").css('background-color'));
+            });
+            $("#couleur3").click(function(){
+               $("#couleur3").html($("#couleur3").css('background-color'));
+            });
+            $("#couleur4").click(function(){
+               $("#couleur4").html($("#couleur4").css('background-color'));
+            });
+            $(".pGroupe").last().css({"background-color":"orange"}).addClass('bgOrange')
+            $("#exercice5").click(function(){
+               $("#monDiv").css({"background-color": "red", "color" : "white"});
+            });
+            $("#exercice6").click(function(){
+               $("#paragraphe2").after("<p> Voici le texte ajouté au paragraphe en utilisant le method after</p>");
+            });
+        });
+        
+    </script>
+    
+</body>
+</html>   
